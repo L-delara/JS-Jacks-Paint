@@ -1,15 +1,20 @@
 function configureListeners() {
-    let images = // select img elements  
+    // select img elements 
+    let images = document.getElementsByTagName("img");
 
 
      for (var i = 0; i < images.length; i++) {        
-        // iterate over images and add mouseover event listeners      
+        // iterate over images and add mouseover event listeners 
+        document.getElementById(images[i].id).addEventListener("mouseover", addOpacity)
+        document.getElementById(images[i].id).addEventListener("mouseover", removeOpacity)     
     } 
 }
 
 function addOpacity(event) {
     // add appropriate CSS class
-    getProductInfo(event.target.id);     
+    
+    getProductInfo(event.target.id);
+
 }
 
 function removeOpacity(event) {
@@ -61,7 +66,7 @@ function getProductInfo(paintColor) {
            price: "$4.99";
             colorName: "Solid Black"
             break;  
-              
+
         case 'pn7':
             // set variables for price and color name and invoke a function to update the price     
             
